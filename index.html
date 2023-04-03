@@ -189,6 +189,28 @@ clevertap.event.push("Event1");
 
 
 </form>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
 
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyDapJNT7mF1tvWwIzG0ySknok9yduROlqI",
+    authDomain: "radhika-3cc75.firebaseapp.com",
+    projectId: "radhika-3cc75",
+    storageBucket: "radhika-3cc75.appspot.com",
+    messagingSenderId: "662295301481",
+    appId: "1:662295301481:web:55f80d8f77fabdbf0701f8",
+    measurementId: "G-HWHD7P618Y"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
 </body>
 </html>
