@@ -1,0 +1,200 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<title>WEB SDK</title>
+<style>  
+table {
+     font-family : Arial, Helvetica, sans-serif;
+     font-size : 120%;
+  font-weight: bold;
+  background-color: white
+
+}
+form {
+     text-align : center;
+}
+ h1 {
+   color: 
+   font-family: Arial;
+   text-align: center
+ }
+ body {
+     background-image: url("image123.jpeg");
+     text-align: center;
+ }
+
+ </style>
+<head>  
+     <h1> REGISTRATION FORM</h1>
+<script type="text/javascript">
+     var clevertap = {event:[], profile:[], account:[], onUserLogin:[], notifications:[], privacy:[]};
+ // replace with the CLEVERTAP_ACCOUNT_ID with the actual ACCOUNT ID value from your Dashboard -> Settings page
+clevertap.account.push({"id": "TEST-679-66K-8K6Z"});
+clevertap.privacy.push({optOut: false}); //set the flag to true, if the user of the device opts out of sharing their data
+clevertap.privacy.push({useIP: false}); //set the flag to true, if the user agrees to share their IP data
+ (function () {
+         var wzrk = document.createElement('script');
+         wzrk.type = 'text/javascript';
+         wzrk.async = true;
+         wzrk.src = ('https:' == document.location.protocol ? 'https://d2r1yp2w7bby2u.cloudfront.net' : 'http://static.clevertap.com') + '/js/clevertap.min.js';
+         var s = document.getElementsByTagName('script')[0];
+         s.parentNode.insertBefore(wzrk, s);
+  })();
+  clevertap.spa = true
+
+
+  clevertap.notifications.push({
+    "titleText":'Would you like to receive Push Notifications?',
+    "bodyText":'We promise to only send you relevant content and give you updates on your transactions',
+    "okButtonText":'Sign me up',
+    "rejectButtonText":'No thanks',
+    // "askAgainTimeInSeconds" : 3,
+    "okButtonColor":'#778046'});
+
+  clevertap.notifications.push({
+    "titleText":popupTitleText,
+    "bodyText":popupBodyText,
+    "okButtonText":okButtonText,
+    "rejectButtonText":rejectButtonText,
+    "okButtonColor":okButtonColorInHex});
+
+
+
+
+
+
+  function Event()
+  {
+  clevertap.event.push("Product Viewed", {
+  "Product name":"Casio Chronograph Watch",
+  "Category":"Mens Accessories",
+  "Price":59.99,
+  "Date": new Date()
+});
+alert("Event done!!");
+}
+
+
+
+
+
+
+  function Login()
+
+  {
+     var name=document.getElementById("name").value;
+     var email=document.getElementById("email").value;
+     var pn =document.getElementById("mobile").value;
+
+     clevertap.onUserLogin.push({
+ "Site": {
+   "Name": "Radhika",            // String
+   "Identity": 61026032,              // String or number
+   "Email": "sweety*********@gmail.com"         // Email address of the user
+   "Phone": "+91918*******"+pn,           // Phone (with the country code)
+   "Gender": "F",                     // Can be either M or F
+   "DOB": new Date(),                 // Date of Birth. Date object
+// optional fields. controls whether the user will be sent email, push etc.
+   "MSG-email": false,                // Disable email notifications
+   "MSG-push": true,                  // Enable push notifications
+   "MSG-sms": true,                   // Enable sms notifications
+   "MSG-whatsapp": true,              // Enable WhatsApp notifications
+ }
+});
+  alert ("Login Successfully");
+}
+
+
+
+
+
+
+function Par()
+{
+     clevertap.profile.push({
+
+          "Site": {
+               "Address" : "Mumbai",
+               "Course Name" : "Python",
+               "Gender" : "M",
+               "DOB" : new Date(),
+          }
+     });
+     alert ("Profile Updated");
+}
+
+
+
+  
+ function Event1()
+ {
+clevertap.event.push("Event1");
+ }
+ function Event1111()
+ {
+
+ }
+ 
+
+</script>
+
+
+</head>
+<body>
+     <form> <table align="center">
+          <tr> 
+
+          <td>Name </td> <td><input type= "text" placeholder="Name" name=""> </td>
+     </tr>
+
+
+
+          <tr> 
+               <td>Email</td> <td> <input type="mail" placeholder ="abc123@gmail.com" name=""> </td>
+          </tr> 
+
+
+
+          <tr>
+               <td> Password </td> <td> <input type="password" 
+                    placeholder = "password" name=""> </td> 
+               </tr>
+
+
+
+     
+     <tr> 
+          <td> <input type="radio" id="html" name="Gender" value="Female">
+<label for="female">Female</label> </td> 
+<br> <td>
+
+<input type="radio" id="css" name="Gender" value="Male">
+ <label for="male">Male</label> </td>
+</tr>
+
+
+
+ <tr> 
+     <td> Phone No:</td> <td> <select> <option>+91</option>option>
+ <option>+92</option>
+ <option>+93</option>
+<option>+94</option> </select>
+<input type="phone no" placeholder = "918*******" name= "">
+      </td>
+
+</tr>
+
+<tr><td>
+     <input type="Submit" value="LOGIN" name="">
+     <input type="Submit" value="PUSH PROFILE" name="">
+     <input type="Submit" value="EVENT" name="">
+     <input type="Submit" value="EVENT1" name="">
+     <input type="Submit" value="EVENT2" name="">
+</td></tr>
+
+
+</form>
+
+</body>
+</html>
