@@ -43,7 +43,7 @@ clevertap.privacy.push({useIP: false}); //set the flag to true, if the user agre
   })();
   clevertap.spa = true
 
-
+function MyFunction(){
   clevertap.notifications.push({
     "titleText":'Would you like to receive Push Notifications?',
     "bodyText":'We promise to only send you relevant content and give you updates on your transactions',
@@ -52,7 +52,7 @@ clevertap.privacy.push({useIP: false}); //set the flag to true, if the user agre
     // "askAgainTimeInSeconds" : 3,
     "okButtonColor":'#778046'});
 
-
+}
 
 
 
@@ -135,7 +135,7 @@ clevertap.event.push("Event1");
 
 
 </head>
-<body>
+<body onload="MyFunction()">
      <form> <table align="center">
           <tr> 
 
