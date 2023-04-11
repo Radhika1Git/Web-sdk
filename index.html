@@ -77,31 +77,6 @@ clevertap.privacy.push({useIP: false}); //set the flag to true, if the user agre
   })();
   clevertap.spa = true
 
-function MyFunction(){
-  clevertap.notifications.push({
-    "titleText":'Would you like to receive Push Notifications?',
-    "bodyText":'We promise to only send you relevant content and give you updates on your transactions',
-    "okButtonText":'Sign me up',
-    "rejectButtonText":'No thanks',
-    // "askAgainTimeInSeconds" : 3,
-    "okButtonColor":'#778046'});
-
-}
-
-
-function Event()
-  {
-  clevertap.event.push("Product Viewed", {
-  "Product name":"Casio Chronograph Watch",
-  "Category":"Mens Accessories",
-  "Price":59.99,
-  "Date": new Date()
-});
-alert("Event done!!");
-}
-
-
-
 
 
 
@@ -110,7 +85,10 @@ alert("Event done!!");
   {
      var name=document.getElementById("name").value;
      var email=document.getElementById("email").value;
-     var pn =document.getElementById("mobile").value;
+     var password=document.getElementById("password").value;
+     var phone =document.getElementById("mobile").value;
+     var identity = document.getElementById("Identity").value;
+     clevertap.event.push("Login", {});
 
      clevertap.onUserLogin.push({
  "Site": {
@@ -133,20 +111,20 @@ alert("Event done!!");
 
 
 
-
-
 function Par()
 {
     var name=document.getElementById("name").value;
      var email=document.getElementById("email").value;
-     var pn =document.getElementById("mobile").value;
+     var phone =document.getElementById("mobile").value;
+     var identity = document.getElementById("Identity").value;
 
      clevertap.profile.push({
 
           "Site": {
-               "Address" : "Mumbai",
-               "Course Name" : "Python",
-               "Gender" : "M",
+            "name" : Radhika
+               "Address" : Mumbai,
+               "Course Name" : Python,
+               "Gender" : M,
                "DOB" : new Date(),
           }
      });
@@ -155,18 +133,40 @@ function Par()
 
 
 
+
+function Event()
+  {
+ 
+  clevertap.event.push("Product Viewed", {
+  "Product name":"Casio Chronograph Watch",
+  "Category":"Mens Accessories",
+  "Price":59.99,
+  "Date": new Date()
+});
+alert("Event done!!");
+}
+
+function MyFunction(){
+  clevertap.notifications.push({
+    "titleText":'Would you like to receive Push Notifications?',
+    "bodyText":'We promise to only send you relevant content and give you updates on your transactions',
+    "okButtonText":'Sign me up',
+    "rejectButtonText":'No thanks',
+    // "askAgainTimeInSeconds" : 3,
+    "okButtonColor":'#778046'});
+
+}
+
+
+
+
+
+
+
+
+
   
- function Event1()
- {
-    var name=document.getElementById("name").value;
-     var email=document.getElementById("email").value;
-     var pn =document.getElementById("mobile").value;
 
-clevertap.event.push(name, 
-    {"email": email,
-    "name": name});
-
- }
 
  
 
@@ -187,13 +187,13 @@ clevertap.event.push(name,
      <form> <table align="center">
           <tr> 
 
-          <td>Name </td> <td><input type= "text" placeholder="Name" name=""> </td>
+          <td>Name </td> <td><input type= "text" id="name" placeholder="Name" name=""> </td>
      </tr>
 
 
 
           <tr> 
-               <td>Email</td> <td> <input type="mail" placeholder ="abc123@gmail.com" name=""> </td>
+               <td>Email</td> <td> <input type="email" id="email" placeholder ="abc123@gmail.com" name=""> </td>
           </tr> 
 
 
@@ -222,7 +222,7 @@ clevertap.event.push(name,
  <option>+92</option>
  <option>+93</option>
 <option>+94</option> </select>
-<input type="phone no" placeholder = "918*******" name= "">
+<input type="phone no" placeholder = "918*******" id="" name= "">
       </td>
 
 </tr>
@@ -246,7 +246,7 @@ clevertap.event.push(name,
   // Your web app's Firebase configuration
   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
   const firebaseConfig = {
-    apiKey: "AIzaSyDapJNT7mF1tvWwIzG0ySknok9yduROlqI",
+    apiKey: "AIzaSyDzQIGVbSeus6LS4uTvRjo-LbcCnKIswH8",
     authDomain: "radhika-3cc75.firebaseapp.com",
     projectId: "radhika-3cc75",
     storageBucket: "radhika-3cc75.appspot.com",
