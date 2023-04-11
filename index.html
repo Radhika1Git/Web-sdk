@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <meta charset="UTF-8">
@@ -20,12 +21,45 @@ form {
    text-align: center
  }
  body {
-    
+     background-image: url("image123.jpeg");
+     text-align: center;
  }
+ .icon-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  color: #333333;
+  background: #dddddd;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+}
+
+.icon-button:hover {
+  cursor: pointer;
+}
+
+.icon-button:active {
+  background: #cccccc;
+}
+
+
+
+
+ 
 
  </style>
+
+
+
+
 <head>  
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
      <h1> REGISTRATION FORM</h1>
+
  
 <script type="text/javascript">
      var clevertap = {event:[], profile:[], account:[], onUserLogin:[], notifications:[], privacy:[]};
@@ -55,10 +89,7 @@ function MyFunction(){
 }
 
 
-
-
-
-  function Event()
+function Event()
   {
   clevertap.event.push("Product Viewed", {
   "Product name":"Casio Chronograph Watch",
@@ -106,6 +137,10 @@ alert("Event done!!");
 
 function Par()
 {
+    var name=document.getElementById("name").value;
+     var email=document.getElementById("email").value;
+     var pn =document.getElementById("mobile").value;
+
      clevertap.profile.push({
 
           "Site": {
@@ -123,19 +158,32 @@ function Par()
   
  function Event1()
  {
-clevertap.event.push("Event1");
- }
- function Event1111()
- {
+    var name=document.getElementById("name").value;
+     var email=document.getElementById("email").value;
+     var pn =document.getElementById("mobile").value;
+
+clevertap.event.push(name, 
+    {"email": email,
+    "name": name});
 
  }
+
  
 
 </script>
 
 
+
+
+
+
+
 </head>
 <body onload="MyFunction()">
+     <button type="button" onclick="MyFunction()" class="icon-button">
+    <span class="material-icons">notifications</span>
+    <span class="icon-button__badge">+</span>
+  </button>
      <form> <table align="center">
           <tr> 
 
@@ -180,15 +228,14 @@ clevertap.event.push("Event1");
 </tr>
 
 <tr><td>
-     <input type="Submit" value="LOGIN" name="">
-     <input type="Submit" value="PUSH PROFILE" name="">
-     <input type="Submit" value="EVENT" name="">
-     <input type="Submit" value="EVENT1" name="">
-     <input type="Submit" value="EVENT2" name="">
+     <button class ="btn btn-primary" onclick ="Login()" value="LOGIN" name=""> Login</button>
+     <button  class ="btn btn-primary" onclick = "Event1()" value="EVENT1" name=""> Event1 </button>
 </td></tr>
 
 
 </form>
+
+
 <script type="module">
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
@@ -212,5 +259,10 @@ clevertap.event.push("Event1");
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
 </script>
+
+
+
+
+
 </body>
 </html>
