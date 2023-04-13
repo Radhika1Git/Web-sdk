@@ -111,12 +111,15 @@ clevertap.privacy.push({useIP: false}); //set the flag to true, if the user agre
 
   clevertap.onUserLogin.push({
  "Site": {
-   "Name": document.getElementById("name").value,            // String
+      "Name" : "Test",
+
+      "Email" : "test@email.com",
+//    "Name": document.getElementById("name").value,            // String
             // String or number
-   "Email": document.getElementById("email").value,         // Email address of the user
-   "Phone": "+91"+document.getElementById("mobile").value,           // Phone (with the country code)
+//    "Email": document.getElementById("email").value,         // Email address of the user
+//    "Phone": "+91"+document.getElementById("mobile").value,           // Phone (with the country code)
                        // Can be either M or F
-   "DOB": new Date(),                 // Date of Birth. Date object
+//    "DOB": new Date(),                 // Date of Birth. Date object
 // optional fields. controls whether the user will be sent email, push etc.
    "MSG-email": false,                // Disable email notifications
    "MSG-push": true,                  // Enable push notifications
